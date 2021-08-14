@@ -1,0 +1,12 @@
+#back {
+    position:fixed;
+	left:25px;
+	top:80px;
+    border: 1px solid #999;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    color: #666;
+    background-color: #eee;
+    cursor: pointer;
+  }

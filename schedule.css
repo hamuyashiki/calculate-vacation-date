@@ -1,0 +1,116 @@
+
+body {    
+    background-color: skyblue;
+}
+
+#title{
+    position:fixed;
+	left:650px;
+	top:0px;
+    text-align: center;
+    font-size:3.0em
+}
+
+ #text-deadline{
+    position:fixed;
+	left:10px;
+	top:50px;
+    text-align: center;
+    font-size:1.5em
+ } 
+
+input[type="date"] {
+    padding: 10px;
+    text-align: center;
+    font-size:1.5em
+  }
+
+#text-rest {
+    position:fixed;
+	left:10px;
+	top:180px;
+    text-align: center;
+    font-size:1.5em
+}
+
+#input-rest {
+    position:absolute;
+	left:400px;
+	top:-10px;
+    width: 80px;
+    height: 50px;
+    text-align: center;
+    font-size:1.5em
+}
+
+h1 {
+    position:fixed;
+	left:510px;
+	top:155px;
+    text-align: center;
+}
+
+p {
+    position:fixed;
+	left:10px;
+	top:260px;
+    text-align: center;
+    font-size:1.5em;
+}
+
+div {
+    position:absolute;
+	left:420px;
+	top:280px;
+    text-align: center;
+    font-size:1.5em;
+}
+
+img {
+    position:absolute;
+	left:750px;
+	top:360px;
+    width: 200px;
+    height: 200px;
+}
+
+#submit {
+    position:fixed;
+	left:620px;
+	top:260px;
+    text-align: center;
+    font-size:2.0em;        
+    padding: 15px;
+    background: #f8f67a;
+    border-radius: 30px;
+    cursor: pointer;    
+  }
+
+  .fukidashi {    
+    position: fixed;
+    left:720px;
+	top:360px;    
+    width: 27px;
+    height: 18px;
+    bottom: 3px;
+    background: #f0f87a;
+    border-radius: 50%;
+  } 
+    
+  .fukidashi:after {  
+    content: "";
+    position: absolute;
+    left: 20px;
+    width: 13px;
+    height: 12px;
+    bottom: -20px;
+    background: #f0f87a;
+    border-radius: 50%;
+  }
+
+  #explanation {
+      position: fixed;
+      left: 650px;
+      top: 150px;
+
+  }
