@@ -4,15 +4,12 @@ let queryObject = new Object();
 if(queryString){
   queryString = queryString.substring(1);  // パラメータから?を取り除く
   let parameters = queryString.split('&');
-  console.log(parameters.length);
+
 // クエリパラメータの内　最初の２つを配列に保存
     for (let i = 0; i < 2; i++) {
         let element = parameters[i].split('=');
         let paramName = decodeURIComponent(element[0]);
         let paramValue = decodeURIComponent(element[1]);
-
-        console.log(paramName);
-        console.log(paramValue);
 
         queryObject[paramName] = paramValue; // パラメータのnameを引数に年月日を保存
     }
@@ -23,27 +20,20 @@ if(queryString){
       let element1 = parameters[i].split('=');
       var checkValue = decodeURIComponent(element1[1]);
 
-      console.log(checkValue);
-
       checkObject[i-2] = checkValue; // checkboxの情報を配列に保存
     }
 }
-console.log(checkObject);
 
 let parameter = document.getElementById("display");
-console.log(queryObject["deadline"]);
-
 let a = queryObject["deadline"];
-console.log(a);
 
-const difference = diff(a); 
-console.log(difference);
-
+// 現在の日付から指定日までの日数を計算する
+const difference = diff(a);
+// 休みを取る間隔を計算する
 let span = difference/queryObject["rest"];
-console.log(difference/queryObject["rest"]);
 
-// どの曜日が休みを取れないかを配列に保存(値1:取れない)
-const dayE = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+// どの曜日が休みを取れないかを配列に保存する(値1:取れない)
+const dayE = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']; // クエリパラメータ文字列と比較する配列
 let avoidDay = [];
 for(i=0; i<dayE.length; i++) {
    if(checkObject.includes(dayE[i])) {
@@ -51,7 +41,6 @@ for(i=0; i<dayE.length; i++) {
    }
    else{avoidDay[i] = 0;}
 }
-console.log(avoidDay);
 
 /**
  * 本日を基準に　i　番目の休みがが何月何日何曜日かを計算する
@@ -103,7 +92,6 @@ for (i = 0; i < queryObject["rest"]; i++) {
    }
 
    // ずらした結果が　ひとつ前の休みの結果と同じでないかをチェックし同じな場合は　最も近い後ろの曜日にする
-  console.log(`最終${txt}`);
 
   // 追加する要素の数により表示エリアを分ける
   numChild += 1;
@@ -118,7 +106,6 @@ for (i = 0; i < queryObject["rest"]; i++) {
    resultDivided2.appendChild(paragraph);
   }  
 }
-
 
 /**
  * 休みの日を計算し、指定の日数ずらす、表示用コメントを作成する

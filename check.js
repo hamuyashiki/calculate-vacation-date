@@ -8,16 +8,12 @@ function stopSubmit() {
     let a = document.getElementById("deadline");
     let b = document.getElementById("input-rest");
 
-    console.log(a.value);
-    console.log(b.value);
     a = a.value;
     let showDays = diff(a);
-    console.log(showDays);
 
     let f = showDays - b.value; // 指定日までの日数と取得日数との差
     let span = f / b.value;  // 計算上の休みの間隔
     span = Math.ceil(span);
-    console.log(span);
 
     // yyyy-mm-dd の形を　yyyy,mm,ddに分割する    
     const dl = a.split("-");
@@ -26,18 +22,14 @@ function stopSubmit() {
     const thisMonth = dl[1];
     const thisDay = dl[2];
 
-    console.log(thisDay);
-
     const limitDate = new Date(thisYear, thisMonth - 1, thisDay)
-    console.log(limitDate);
     const limitDay = limitDate.getDay();
-    console.log(limitDay);
+
     // 休みの間隔が短い場合は　計算はするが計算結果の重複が生じる可能性があるので注意を促す
     if (span < 7) {
         window.alert("取得間隔が短いため計算結果が重複する可能性があります　計算結果を確認して適宜修正してください");
     }
     // １．指定日までの日数よりも取得日数が多い場合は計算できないのでエラーを出す
-    console.log(f);
     let result1 = 0;
     if (f < 0) {
         result1 = 1;
@@ -57,7 +49,6 @@ function stopSubmit() {
             dayArray[i] = 9; // 例 [9,9,9,9,9,9]
         }
     }
-    console.log(dayArray);
     if (count === 7) {
         window.alert("全部にチェックを付けないでください");
         result2 = 1;
@@ -65,12 +56,8 @@ function stopSubmit() {
         result2 = 0;
     }
 
-    console.log(b.value);
-    console.log(count);
-
     // ３．曜日の制約(チェック)が多すぎて日付を一つに絞れない場合はエラーを出す
     let g = showDays - b.value / (7 - count) * 7　　// 指定日までの日数-取得日数÷一週間に最大取れる回数*7日
-    console.log(g);
     let result3 = 0;
     if (g < 0) {
         window.alert("曜日の制約が多すぎて計算できません");

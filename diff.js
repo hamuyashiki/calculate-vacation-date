@@ -12,8 +12,6 @@ const thisYear = dl[0];
 const thisMonth = dl[1];
 const thisDay = dl[2];
 
-console.log(thisDay);
-
 // 現在日時を数値に変換
 const nowDate = new Date();
 const dateNumNow = nowDate.getTime();
